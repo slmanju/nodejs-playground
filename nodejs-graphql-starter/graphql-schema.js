@@ -1,19 +1,17 @@
 import { graphqlHTTP } from "express-graphql";
 import graphql from 'graphql';
 
-const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
-
-const RootQueryType = new GraphQLObjectType({
+const RootQueryType = new graphql.GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
     message: { 
-      type: GraphQLString,
+      type: graphql.GraphQLString,
       resolve: () => "Hello world!"
     }
   }
 });
 
-const schema = new GraphQLSchema({ query: RootQueryType });
+const schema = new graphql.GraphQLSchema({ query: RootQueryType });
 
 function configureGraphql(app) {
   app.use('/graphql', graphqlHTTP({
