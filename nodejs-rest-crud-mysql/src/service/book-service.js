@@ -1,4 +1,4 @@
-import { BookRepository } from '../repository/book-repository';
+import { BookRepository } from '../repository/book-repository.js';
 
 export class BookService {
   constructor() {
@@ -18,14 +18,14 @@ export class BookService {
   }
 
   async update(id, book) {
-    console.log(`updating ${id}`);
     const saved = await this.findById(id);
-    if (saved) {
+    if (saved !== null) {
       book.id = id;
       this.bookRepository.update(book);
       return book;
+    } else {
+      return null;
     }
-    return null;
   }
 
   delete(id) {
