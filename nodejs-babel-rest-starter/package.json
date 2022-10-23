@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "Manjula Jayawardana",
   "license": "ISC",
-  "description": "",
+  "description": "Node.js restful starter with babel",
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/node": "^7.19.1",
